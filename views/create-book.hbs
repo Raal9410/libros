@@ -1,0 +1,26 @@
+<div class="container">
+<form action="/create-book" method="post">
+  <div class="form-group">
+  <label for="title">Title</label>
+  <input class="form-control" type="text" name="title" id="tile">
+  </div>
+  <div class="form-group">
+  <label for="description">Description</label>
+  <input class="form-control" type="text" name="description" id="description">
+  </div>
+  <div class="form-group">
+  <label for="author">Author</label>
+  <select name="author" class="custom-select">
+    <option selected>Select an author</option>
+    {{#each authors}}
+    <option value="{{this._id}}">{{this.name}} {{this.lastName}}</option>
+    {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+  <label for="rating">Rating</label>
+  <input class="form-control" type="number" max="5" min="1" name="rating" id="rating">
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+</div>
